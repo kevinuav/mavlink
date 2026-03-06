@@ -6767,6 +6767,19 @@
       <field type="float" name="ignition_voltage" units="V">Supply voltage to EFI sparking system.  Zero in this value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.</field>
       <field type="float" name="fuel_pressure" units="kPa">Fuel pressure. Zero in this value means "unknown", so if the fuel pressure really is zero kPa use 0.0001 instead.</field>
     </message>
+    <!-- 226 JE_STATUS imported from ardupilotmega.xml -->
+    <message id="226" name="JE_STATUS">
+      <description>Jet engine status output</description>
+      <field type="uint8_t" name="e_id">Engine ID</field>
+      <field type="uint8_t" name="status">JE  status</field>
+      <field type="uint8_t" name="fault">Engie fault</field>
+      <field type="uint64_t" name="rpm">RPM</field>
+      <field type="float" name="egt" units="degC">Exhaust gas temperature</field>
+      <field type="float" name="fuel_consumed" units="cm^3">Fuel consumed</field>
+      <field type="float" name="fuel_flow" units="cm^3/s">Fuel flow rate</field>
+      <field type="float" name="engine_load" units="%">Engine load</field>
+      <field type="float" name="throttle_out" units="%">Output throttle</field>
+    </message>
     <!-- MESSAGE IDs 180 - 229: Space for custom messages in individual projectname_messages.xml files -->
     <message id="230" name="ESTIMATOR_STATUS">
       <description>Estimator status message including flags, innovation test ratios and estimated accuracies. The flags message is an integer bitmask containing information on which EKF outputs are valid. See the ESTIMATOR_STATUS_FLAGS enum definition for further information. The innovation test ratios show the magnitude of the sensor innovation divided by the innovation check threshold. Under normal operation the innovation test ratios should be below 0.5 with occasional values up to 1.0. Values greater than 1.0 should be rare under normal operation and indicate that a measurement has been rejected by the filter. The user should be notified if an innovation test ratio greater than 1.0 is recorded. Notifications for values in the range between 0.5 and 1.0 should be optional and controllable by the user.</description>
